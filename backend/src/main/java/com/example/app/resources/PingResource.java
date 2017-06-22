@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.resources;
 
 import java.util.HashMap;
 import java.util.Map;
