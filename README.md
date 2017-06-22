@@ -9,8 +9,8 @@ This starter comes bundled with following features:
 1. TravisCI
 2. Checkstyle
 3. ErrorProne
-4. Maven dependency checker plugin
-
+4. CORS enabled
+5. REST API base path
 
 ## Code structure
 
