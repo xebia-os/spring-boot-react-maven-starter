@@ -9,7 +9,6 @@
         <module>backend</module>
         <module>frontend</module>
     </modules>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -26,6 +25,16 @@
         <checkstyle.version>2.17</checkstyle.version>
         <checkstyle.puppycrawl.version>7.7</checkstyle.puppycrawl.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.shekhargulati</groupId>
+                <artifactId>strman</artifactId>
+                <version>0.3.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
