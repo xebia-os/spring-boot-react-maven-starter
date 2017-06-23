@@ -10,7 +10,7 @@ This project provides productive setup for building Spring Boot React applicatio
 
 ## Features
 
-This starter comes bundled with following features:
+This starter comes bundled with the following features:
 
 1. Multi module Maven project: A multi module project to modularize backend and frontend code separately.
 2. Maven wrapper: So, you don't need to install Maven on your machine.
