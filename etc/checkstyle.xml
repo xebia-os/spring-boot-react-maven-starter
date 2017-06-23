@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 <module name="com.puppycrawl.tools.checkstyle.Checker">
+
     <!-- Root Checks -->
     <module name="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck">
         <property name="lineSeparator" value="lf"/>
-    </module>
-
-    <module name="SuppressionFilter">
-        <property name="file" value="etc/checkstyle-exclude.xml" />
     </module>
 
     <!-- TreeWalker Checks -->

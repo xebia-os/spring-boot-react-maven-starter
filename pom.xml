@@ -24,6 +24,8 @@
         <java.version>1.8</java.version>
         <checkstyle.version>2.17</checkstyle.version>
         <checkstyle.puppycrawl.version>7.7</checkstyle.puppycrawl.version>
+        <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
+        <main.basedir>${project.basedir}</main.basedir>
     </properties>
 
     <dependencyManagement>
@@ -74,7 +76,8 @@
                 </dependencies>
                 <configuration>
                     <failsOnError>true</failsOnError>
-                    <configLocation>etc/checkstyle.xml</configLocation>
+                    <configLocation>${main.basedir}/etc/checkstyle.xml</configLocation>
+                    <suppressionsLocation>${main.basedir}/etc/checkstyle-exclude.xml</suppressionsLocation>
                     <consoleOutput>true</consoleOutput>
                 </configuration>
                 <executions>
@@ -82,6 +85,25 @@
                         <phase>validate</phase>
                         <goals>
                             <goal>checkstyle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd-plugin.version}</version>
+                <configuration>
+                    <minimumTokens>50</minimumTokens>
+                    <targetJdk>1.8</targetJdk>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>cpd</goal>
+                            <goal>cpd-check</goal>
                         </goals>
                     </execution>
                 </executions>

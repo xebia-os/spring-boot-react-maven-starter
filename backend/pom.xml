@@ -11,6 +11,10 @@
 
     <artifactId>backend</artifactId>
 
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,7 +55,7 @@
                             <outputDirectory>${basedir}/target/classes/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>../frontend/build</directory>
+                                    <directory>${main.basedir}/frontend/build</directory>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
