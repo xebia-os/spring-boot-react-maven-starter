@@ -1,7 +1,12 @@
 spring-boot-react-multi-module-maven-starter
 -----
 
-This is a multi-module Spring Boot React starter app with good defaults. The react app is built using [create-react-app](https://github.com/facebookincubator/create-react-app).
+This is a multi-module Spring Boot React Apache Maven starter app with good defaults. The react app is built using [create-react-app](https://github.com/facebookincubator/create-react-app).
+
+This project provides productive setup for building Spring Boot React applications. The application is divided into two Maven modules:
+
+1. `backend`: This contains Java code of the application.
+2. `frontend`: This contains all react JavaScript code of the application.
 
 ## Features
 
@@ -14,19 +19,35 @@ This starter comes bundled with following features:
 5. Copy paste detection: Uses PMD CPD check to detect code duplication.
 6. CORS enabled: A global configuration is added to enable CORS so that frontend can work seamlessly with backend during development.
 7. REST API base path: Sets the base REST API path to `/api`. You can configure it by changing `rest.api.base.path` property.
-8. Release management:
-9. Bundle Git commit information
+8. Bundle Git commit information
 
-## Code structure
+## Running the backend
 
-The application is divided into two Maven modules:
+There are multiple ways to run the backend. For development, you can use your favorite IDE and run the
+`com.example.app.Application`. As soon as your code compiles, Spring Boot DevTools will reload the code.
 
-1. `backend`: This contains Java code of the application.
-2. `frontend`: This contains all react JavaScript code of the application.
+You can also run the application using Maven.
 
-### Hot reloading
+```bash
+$ cd backend
+$  ../mvnw spring-boot:run
+```
 
-With the dev server running, saving your javascript files or stylus assets will automatically trigger the hot reloading
-(without browser refresh) of the application.
+## Running the frontend
 
-For the backend, recompiling the project in your IDE will trigger the reloading of the application's class loader.
+**You will need 6.0+ and yarn to run the dev server and build the project**.
+
+Make sure to install [yarn on your development machine](https://yarnpkg.com/en/docs/install).
+
+To install all the required binaries for your project, you can run following commmand.
+
+```
+$ cd frontend
+$ ../mvnw frontend:install-node-and-yarn frontend:yarn
+```
+
+Once the above command finishes, you can start the frontend using the `yarn start` command.
+
+## Hot reloading
+
+Both the frontend and backend support hot reloading.
