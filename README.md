@@ -15,7 +15,7 @@ This starter comes bundled with following features:
 6. CORS enabled: A global configuration is added to enable CORS so that frontend can work seamlessly with backend during development.
 7. REST API base path: Sets the base REST API path to `/api`. You can configure it by changing `rest.api.base.path` property.
 8. Release management:
-9. Copy paste detection
+9. Copy paste detection: Uses PMD CPD check to detect code duplication.
 
 ## Code structure
 

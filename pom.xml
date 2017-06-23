@@ -95,7 +95,7 @@
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
                     <minimumTokens>50</minimumTokens>
-                    <targetJdk>1.8</targetJdk>
+                    <targetJdk>${java.version}</targetJdk>
                     <failOnViolation>true</failOnViolation>
                 </configuration>
                 <executions>
