@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -42,6 +43,7 @@ public class Application {
 
     @Bean
     public WebMvcRegistrationsAdapter webMvcRegistrationsHandlerMapping() {
+        Application application = this;
         return new WebMvcRegistrationsAdapter() {
             @Override
             public RequestMappingHandlerMapping getRequestMappingHandlerMapping() {
@@ -52,7 +54,7 @@ public class Application {
                         Class<?> beanType = method.getDeclaringClass();
                         RestController restApiController = beanType.getAnnotation(RestController.class);
                         if (restApiController != null) {
-                            PatternsRequestCondition apiPattern = new PatternsRequestCondition(restApiBasePath)
+                            PatternsRequestCondition apiPattern = new PatternsRequestCondition(application.restApiBasePath)
                                     .combine(mapping.getPatternsCondition());
 
                             mapping = new RequestMappingInfo(mapping.getName(), apiPattern,
