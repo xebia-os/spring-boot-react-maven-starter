@@ -10,7 +10,7 @@ This project provides productive setup for building Spring Boot React applicatio
 
 ## Running the full application
 
-You can build the package as a single artifact by running the `./mvnw clean package`.
+You can build the package as a single artifact by running the `./mvnw clean install`.
 Next, you can run the application by executing:
 
 ```bash
