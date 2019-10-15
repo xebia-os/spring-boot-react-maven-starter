@@ -1,7 +1,7 @@
 name: Branch Naming
 
 on:
-  create:
+  push:
     branches-ignore:
      - master
     tags-ignore:
@@ -17,4 +17,4 @@ jobs:
       uses: ./.github/scripts/pom-update.sh
       with:
         new_branch: ${{ github.ref }}
-
+      run: echo pom-update ${{ github.ref }} scirpt should run
