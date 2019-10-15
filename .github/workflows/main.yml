@@ -15,4 +15,4 @@ jobs:
         uses: ./.github/scripts/pom-update.sh
         with:
           new_branch: ${{ github.ref }}
-        if: ! github.ref_type == 'tag'
+        if: ! ${{ github.ref_type }} == 'tag'
