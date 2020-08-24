@@ -1,6 +1,8 @@
 spring-boot-react-maven-starter
 -----
 
+![spring-boot-react-maven-starter CI Build](https://github.com/xebia-os/spring-boot-react-maven-starter/workflows/spring-boot-react-maven-starter%20CI/badge.svg)
+
 This is a multi-module Spring Boot React Apache Maven starter app with good defaults. The react app is built using [create-react-app](https://github.com/facebookincubator/create-react-app).
 
 This project provides a productive setup for building Spring Boot React applications. The application is divided into two Maven modules:
