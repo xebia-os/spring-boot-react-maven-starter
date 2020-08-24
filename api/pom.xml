@@ -32,6 +32,7 @@
     </dependencies>
 
     <build>
+        <finalName>spring-boot-react-starter-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  ui:
+    image: com.xebia.starters/spring-boot-react-starter-ui
+    ports:
+      - "80:80"
+    links:
+      - api
+  api:
+    image: com.xebia.starters/spring-boot-react-starter-api
+    ports:
+      - "8080:8080"
