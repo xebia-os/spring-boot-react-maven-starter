@@ -15,6 +15,15 @@
         <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
 
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/xebia-os/xebia-archunit-extension</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -27,6 +36,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xebia</groupId>
+            <artifactId>archunit-extension</artifactId>
+            <version>0.2.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
