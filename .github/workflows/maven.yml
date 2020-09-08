@@ -32,7 +32,7 @@ jobs:
     - name: Check Env
       env:
         GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-      run: echo '${env.GITHUB_USERNAME}'
+      run: echo "${env.GITHUB_USERNAME}"
     - name: Build with Maven
       env:
         GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
