@@ -29,10 +29,8 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('**/package-lock.json') }}
         # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
         restore-keys: ${{ runner.os }}-maven
-    - name: Check Env
-      run: echo "${{secrets.GITHUB_USERNAME}}"
     - name: Build with Maven
       env:
         GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
       run: mvn -B package --settings settings.xml --file pom.xml
