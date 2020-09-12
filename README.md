@@ -10,42 +10,6 @@ This project provides a productive setup for building Spring Boot React applicat
 1. `api`: This contains Java code of the application.
 2. `ui`: This contains all react JavaScript code of the application.
 
-## Building the application with dependencies
-The `api` module in this starter uses https://github.com/xebia-os/xebia-archunit-extension to enforce good application architecture practices by default. Check [ArchUnit](https://www.archunit.org/) website for reference. It is included as a maven dependency to the package published on Github Packages.
-
-Github Packages needs valid Github credentials to pull the maven dependency. As a result, the build may fail by default. There are 2 options:
-
-1. Add the correct Github credentials to local `$HOME/.m2/settings.xml` file. This is the recommended approach - it will involve some tweaking in the CI pipeline as well. The file may end up looking like below:
-
-   ```
-   <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                         http://maven.apache.org/xsd/settings-1.0.0.xsd">
-       <servers>
-           <server>
-               <id>github</id>
-               <username>REPLACE_WITH_GITHUB_USERNAME</username>
-               <password>GITHUB_PERSONAL_ACCESS_TOKEN</password>
-           </server>
-       </servers>
-   </settings>
-   ```
-
-   To generate a valid Github Personal Access Token please check:
-
-   1. https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
-
-   2. You will need the `read:packages` scope for the token at minimum. Check out https://docs.github.com/en/packages/publishing-and-managing-packages/about-github-packages#about-scopes-and-permissions-for-package-registries. For local use, a common token can be generated with extra scopes for advanced use apart from simply pulling dependencies from  3rd party Github Packages. See screenshot for a sample.
-
-      ![token-maven-packages-scope](images/token-maven-packages-scope.png)
-
-   
-
-2. Remove the `archunit-extension` dependency entirely from `pom.xml`. This is not recommended but can be done in case the architecture tests don't seem to add value.
-
-We suggest taking the extra effort to keep the architecture tests enabled. This will enforce good application structure and coding practices.
-
 ## Running the full application
 
 You can build the package as a single artifact by running the `./mvnw clean install`.

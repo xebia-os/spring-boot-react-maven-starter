@@ -13,10 +13,12 @@ class ApiArchitectureTest extends AbstractArchitectureTests {
         super(new ClassFileImporter()
                         .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
                         .importPackagesOf(Application.class),
-                new String[]{
-                        Entity.class.getPackage().getName()
-                },
+                new String[]{Entity.class.getPackage().getName()},
                 "com.xebia.starters.(*service).domain",
-                Application.class.getPackage().getName(), "Dto");
+                Application.class.getPackage().getName(),
+                "com.xebia.starters.(*)..",
+                new String[]{"Dto"},
+                new String[]{"Util", "Utils"});
+
     }
 }

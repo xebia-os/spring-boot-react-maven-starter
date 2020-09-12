@@ -18,9 +18,9 @@
 
     <repositories>
         <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/xebia-os/xebia-archunit-extension</url>
+            <id>bintray</id>
+            <name>Xebia BinTray Packages</name>
+            <url>https://dl.bintray.com/xebia-os/maven-repo/</url>
         </repository>
     </repositories>
 
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.github.xebia</groupId>
             <artifactId>archunit-extension</artifactId>
-            <version>0.2.0</version>
+            <version>0.4.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
