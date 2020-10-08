@@ -1,4 +1,4 @@
-package com.xebia.starters.api;
+package com.xebia.starters.arch;
 
 import com.github.xebia.archunit.AbstractArchitectureTests;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
@@ -6,10 +6,10 @@ import com.tngtech.archunit.core.importer.ImportOption;
 import com.xebia.starters.Application;
 import com.xebia.starters.domain.Entity;
 
-class ApiArchitectureTest extends AbstractArchitectureTests {
+class ApiArchitectureTests extends AbstractArchitectureTests {
 
 
-    public ApiArchitectureTest() {
+    public ApiArchitectureTests() {
         super(new ClassFileImporter()
                         .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
                         .importPackagesOf(Application.class),

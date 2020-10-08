@@ -52,3 +52,24 @@ $ cd ui
 $ npm start
 ```
 
+## Docker Setup
+
+To build the docker images and start the containers using Docker Compose run the following command. 
+This will work in the *nix systems.
+
+```
+$ sh docker.sh
+```
+
+You can view running docker containers by executing following command.
+
+```
+$ docker ps
+``` 
+
+To stop and remove all docker container you have to run following command. 
+This command should be run from project root.
+
+```
+$ docker-compose stop && docker-compose rm --force
+``` 
