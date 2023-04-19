@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-boot-react-starter</artifactId>
-        <groupId>com.mannanlive</groupId>
+        <groupId>com.mannanlive.starter</groupId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,6 +14,10 @@
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
         <kotlin.version>1.8.20</kotlin.version>
+
+        <!-- plugin versions-->
+        <ktlint-plugin.version>1.14.0</ktlint-plugin.version>
+        <detekt-plugin.version>1.20.0</detekt-plugin.version>
     </properties>
 
     <dependencies>
@@ -27,8 +31,8 @@
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,18 +53,54 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
+                <configuration>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                    </args>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
+                    <jvmTarget>${java.version}</jvmTarget>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>com.github.ozsie</groupId>
+                <artifactId>detekt-maven-plugin</artifactId>
+                <version>${detekt-plugin.version}</version>
                 <executions>
                     <execution>
-                        <id>compile</id>
+                        <phase>validate</phase>
                         <goals>
-                            <goal>compile</goal>
+                            <goal>check</goal>
                         </goals>
+                        <configuration>
+                            <report>
+                                <report>txt:${project.basedir}/target/detekt/detekt.txt</report>
+                                <report>xml:${project.basedir}/target/detekt/detekt.xml</report>
+                                <report>html:${project.basedir}/target/detekt/detekt.html</report>
+                            </report>
+                        </configuration>
                     </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.gantsign.maven</groupId>
+                <artifactId>ktlint-maven-plugin</artifactId>
+                <version>${ktlint-plugin.version}</version>
+                <executions>
                     <execution>
-                        <id>test-compile</id>
+                        <id>format-and-check</id>
+                        <phase>validate</phase>
                         <goals>
-                            <goal>test-compile</goal>
+                            <goal>format</goal>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>

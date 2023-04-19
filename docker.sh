@@ -3,14 +3,13 @@ set -e
 
 echo "Building ui docker image..."
 cd ui/
-docker build -t com.mannanlive/spring-boot-react-starter-ui .
+docker build -t com.mannanlive.starter/spring-boot-react-starter-ui .
 echo "Built ui docker image..."
 
 echo "Building api docker image..."
 cd ../api
-docker build -t com.mannanlive/spring-boot-react-starter-api .
+docker build -t com.mannanlive.starter/spring-boot-react-starter-api .
 echo "Built api docker image..."
-
 
 cd ../
 echo "Running docker-compose up..."

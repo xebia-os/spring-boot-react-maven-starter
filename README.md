@@ -33,7 +33,7 @@ This starter comes bundled with the following features:
 ## Running the backend for development mode
 
 There are multiple ways to run the backend. For development, you can use your favorite IDE and run the
-`com.xebia.starter.Application`. As soon as your code compiles, Spring Boot DevTools will reload the code.
+`com.mannanlive.starter.Application`.
 
 You can also run the application using Maven.
 

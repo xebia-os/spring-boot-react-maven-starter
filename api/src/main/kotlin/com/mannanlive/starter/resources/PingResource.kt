@@ -1,4 +1,4 @@
-package com.mannanlive.resources
+package com.mannanlive.starter.resources
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

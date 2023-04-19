@@ -1,4 +1,4 @@
-package com.mannanlive.config
+package com.mannanlive.starter.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -7,9 +7,9 @@ import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 
 @Configuration
-open class CorsConfig {
+class CorsConfig {
     @Bean
-    open fun corsConfigurationSource(): CorsConfigurationSource {
+    fun corsConfigurationSource(): CorsConfigurationSource {
         val configuration = CorsConfiguration()
         configuration.allowedOrigins = listOf("*")
         configuration.allowedMethods = listOf("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH")

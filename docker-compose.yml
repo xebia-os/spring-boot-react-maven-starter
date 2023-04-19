@@ -1,12 +1,12 @@
 version: "3"
 services:
   ui:
-    image: com.mannanlive/spring-boot-react-starter-ui
+    image: com.mannanlive.starter/spring-boot-react-starter-ui
     ports:
       - "80:80"
     links:
       - api
   api:
-    image: com.mannanlive/spring-boot-react-starter-api
+    image: com.mannanlive.starter/spring-boot-react-starter-api
     ports:
       - "8080:8080"
