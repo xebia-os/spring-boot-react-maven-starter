@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-boot-react-starter</artifactId>
-        <groupId>com.xebia.starters</groupId>
+        <groupId>com.mannanlive</groupId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -55,7 +55,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 </project>

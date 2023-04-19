@@ -15,32 +15,20 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.xebia.starters</groupId>
+    <groupId>com.mannanlive</groupId>
     <artifactId>spring-boot-react-starter</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <checkstyle.version>3.1.1</checkstyle.version>
-        <checkstyle.puppycrawl.version>8.31</checkstyle.puppycrawl.version>
+        <java.version>11</java.version>
         <main.basedir>${project.basedir}</main.basedir>
     </properties>
 
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${checkstyle.version}</version>
-                </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
