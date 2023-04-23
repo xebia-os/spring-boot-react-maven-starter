@@ -72,3 +72,4 @@ This command should be run from project root.
 ```
 $ docker-compose stop && docker-compose rm --force
 ``` 
+
