@@ -16,7 +16,7 @@ You can build the package as a single artifact by running the `./mvnw clean inst
 Next, you can run the application by executing:
 
 ```bash
-$ java -jar api/target/api-0.1.0-SNAPSHOT.jar
+java -jar api\target\spring-boot-react-starter-api.jar
 ```
 
 The application will be accessible at `http://localhost:8080`.
@@ -44,8 +44,7 @@ $  ../mvnw spring-boot:run
 
 ## Running the frontend for development mode
 
-**You will need Node 12+ and npm to run the dev server and build the project**.
-
+**You will need Node v18 and npm to run the dev server and build the project**.
 
 ```
 $ cd ui
