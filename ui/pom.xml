@@ -67,16 +67,17 @@
                 <version>3.0.2</version>
                 <executions>
                     <execution>
-                        <id>copy-resource-one</id>
-                        <phase>generate-sources</phase>
+                        <id>copy-static-files</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.basedir}/../api/src/main/resources/static/</outputDirectory>
+                            <outputDirectory>${project.parent.basedir}/api/src/main/resources/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.basedir}/build</directory>
+                                    <directory>build</directory>
+                                    <filter>false</filter>
                                 </resource>
                             </resources>
                         </configuration>
