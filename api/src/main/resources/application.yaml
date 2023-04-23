@@ -4,5 +4,3 @@ spring:
       spring-boot-maven-react-starter
 server:
   port: 8080
-  servlet:
-    context-path: /api/v1
