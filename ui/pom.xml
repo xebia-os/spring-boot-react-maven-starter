@@ -77,7 +77,7 @@
                             <resources>
                                 <resource>
                                     <directory>build</directory>
-                                    <filter>false</filter>
+                                    <filtering>false</filtering>
                                 </resource>
                             </resources>
                         </configuration>

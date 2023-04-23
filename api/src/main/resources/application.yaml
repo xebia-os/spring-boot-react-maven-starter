@@ -1,7 +1,7 @@
 spring:
   application:
-    name:
-      spring-boot-maven-react-starter
+    name: spring-boot-maven-react-starter
+
 server:
   port: 8080
 
@@ -9,4 +9,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, env
