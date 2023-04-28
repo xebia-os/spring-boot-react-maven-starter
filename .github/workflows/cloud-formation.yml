@@ -3,7 +3,9 @@ name: AWS Cloud Formation
 on:
   push:
     branches: [ master ]
-    paths: [ '.aws/cloud-formation/templates/*.yml' ]
+    paths:
+      - '.aws/cloud-formation/templates/*.yml'
+      - '.github/workflows/cloud-formation.yml'
 
 jobs:
   build:
@@ -14,6 +16,11 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Cloud-Formation Script
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-southeast-2
+          AWS_DEFAULT_OUTPUT: json
         run: |
           ./.aws/cloud-formation/scripts/deploy.sh \
             mannanmavenstarter \
