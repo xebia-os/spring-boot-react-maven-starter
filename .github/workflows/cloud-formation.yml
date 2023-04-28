@@ -1,0 +1,23 @@
+name: spring-boot-react-maven-starter AWS Cloud Formation
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ '.aws/cloud-formation/templates/*.yml' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Cloud-Formation Script
+        run: |
+          ./.aws/cloud-formation/scripts/deploy.sh \
+            mannanmavenstarter \
+            ${GITHUB_REPOSITORY_OWNER} \
+            ${{ github.event.repository.name }} \
+            ${GITHUB_REF_NAME} \
+            ${{ secrets.GH_TOKEN }}
