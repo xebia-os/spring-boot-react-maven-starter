@@ -1,7 +1,8 @@
 spring-boot-react-maven-starter
 -----
 
-![Build](https://github.com/xebia-os/spring-boot-react-maven-starter/workflows/spring-boot-react-maven-starter%20CI/badge.svg)
+[![BUILD](https://github.com/MannanM/spring-boot-react-maven-starter/actions/workflows/maven.yml/badge.svg)](https://github.com/MannanM/spring-boot-react-maven-starter/actions/workflows/maven.yml)
+[![CF](https://github.com/MannanM/spring-boot-react-maven-starter/actions/workflows/maven.yml/badge.svg)](https://github.com/MannanM/spring-boot-react-maven-starter/actions/workflows/cloud-formation.yml)
 
 This is a multi-module Spring Boot React Apache Maven starter app with good defaults. The react app is built using [create-react-app](https://github.com/facebookincubator/create-react-app).
 

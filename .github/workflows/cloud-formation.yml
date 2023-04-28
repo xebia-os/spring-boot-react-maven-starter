@@ -1,4 +1,4 @@
-name: spring-boot-react-maven-starter AWS Cloud Formation
+name: AWS Cloud Formation
 
 on:
   push:

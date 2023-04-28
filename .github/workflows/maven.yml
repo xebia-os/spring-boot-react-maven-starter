@@ -1,4 +1,4 @@
-name: spring-boot-react-maven-starter CI
+name: CI
 
 on:
   push:
